@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button getButton;
 
-    //TODO Реализовать вывод данных, удаление данных, изменение данных.
+    //TODO Реализовать вывод данных(в виде списка как это было в проекте парсера ЦБ), удаление данных, изменение данных.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
