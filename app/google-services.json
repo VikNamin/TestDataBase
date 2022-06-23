@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "480072282190",
+    "project_id": "bookshoptest-4fd8b",
+    "storage_bucket": "bookshoptest-4fd8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480072282190:android:e95646febbb6d67db3d31f",
+        "android_client_info": {
+          "package_name": "ru.vik.testdatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480072282190-ve86qmgvmht4jjv8j6dlk3kn3k82jot8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-p_ihkqURXJr4Cmxi0OFAhIM07NVn8pw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480072282190-ve86qmgvmht4jjv8j6dlk3kn3k82jot8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

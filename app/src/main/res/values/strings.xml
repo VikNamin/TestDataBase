@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestDataBase</string>
+    <string name="getButton">Get Books</string>
+    <string name="createButton">Create Book</string>
+</resources>
