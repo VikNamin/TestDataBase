@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullBookActivity">
+
+    <TextView
+        android:id="@+id/fullNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/nameTextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="331dp"
+        android:layout_height="341dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullNameTextView"
+        app:layout_constraintVertical_bias="0.006">
+
+        <TableRow
+            android:layout_width="289dp"
+            android:layout_height="135dp">
+
+            <TextView
+                android:id="@+id/publisherNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Издатель" />
+
+            <TextView
+                android:id="@+id/publisherNameTextViewChosen"
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:visibility="gone" />
+
+            <EditText
+                android:id="@+id/publisherEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/authorTextView"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Автор" />
+
+            <TextView
+                android:id="@+id/authorTextViewChosen"
+                android:layout_width="179dp"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/yearTextView"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Год Издания" />
+
+            <TextView
+                android:id="@+id/yearTextViewChosen"
+                android:layout_width="164dp"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Цена" />
+
+            <TextView
+                android:id="@+id/priceTextViewChosen"
+                android:layout_width="171dp"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="121dp"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Адрес Магазина" />
+
+            <TextView
+                android:id="@+id/addressTextViewChosen"
+                android:layout_width="159dp"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/availableTextView"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Наличие" />
+
+            <TextView
+                android:id="@+id/availableTextViewChosen"
+                android:layout_width="179dp"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/amountNumTextView"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:gravity="center|left"
+                android:text="Количество" />
+
+            <TextView
+                android:id="@+id/amountNumTextViewChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="updateData"
+        android:text="Update Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        app:layout_constraintVertical_bias="0.17" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
