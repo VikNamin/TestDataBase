@@ -1,37 +1,17 @@
 package ru.vik.testdatabase;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Book book = document.toObject(Book.class);
+                            book.setUid(document.getId());
                             books.add(book);
                         }
                         BookAdapter.OnBookClickListener bookClickListener = new BookAdapter.OnBookClickListener() {
@@ -71,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("available", book.isAvailable());
                                 intent.putExtra("amountNum", book.getAmountNum());
 
-
+                                intent.putExtra("uid", book.getUid());
 
                                 startActivity(intent);
                             }
@@ -89,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BookAddActivity.class);
         startActivity(intent);
     }
-
 }
 
 

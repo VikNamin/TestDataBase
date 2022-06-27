@@ -49,8 +49,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center|end"
                 android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                tools:visibility="gone" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
                 android:id="@+id/publisherEditText"
@@ -61,8 +60,7 @@
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:visibility="gone" />
 
         </TableRow>
 
@@ -84,6 +82,17 @@
                 android:gravity="center|end"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <EditText
+                android:id="@+id/authorEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone" />
         </TableRow>
 
         <TableRow
@@ -104,6 +113,17 @@
                 android:gravity="center|end"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <EditText
+                android:id="@+id/yearEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone" />
 
         </TableRow>
 
@@ -126,6 +146,17 @@
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
+            <EditText
+                android:id="@+id/priceEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
         </TableRow>
 
         <TableRow
@@ -146,6 +177,17 @@
                 android:gravity="center|end"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <EditText
+                android:id="@+id/addressEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone" />
 
         </TableRow>
 
@@ -168,6 +210,17 @@
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
+            <EditText
+                android:id="@+id/availableEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
         </TableRow>
 
         <TableRow
@@ -188,6 +241,17 @@
                 android:gravity="center|end"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <EditText
+                android:id="@+id/amountNumEditText"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center|end"
+                android:inputType="textPersonName"
+                android:scrollbarSize="2dp"
+                android:textSize="11sp"
+                android:visibility="gone" />
 
         </TableRow>
 

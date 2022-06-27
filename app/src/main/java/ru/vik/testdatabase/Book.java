@@ -9,7 +9,8 @@ public class Book {
     private double price;           //Цена
     private String shopAddress;     //Адрес магазина    //TODO Подумать, через что лучше оформить: Текстом, геопозицей через geohash или через +Code
     private boolean available;      //Наличие
-    private int amountNum;         //Количество
+    private int amountNum;          //Количество
+    private String uid = "";
 
     public Book() {
     }
@@ -57,4 +58,11 @@ public class Book {
         return amountNum;
     }
 
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
 }
