@@ -76,6 +76,7 @@
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
+
         </TableRow>
 
         <TableRow

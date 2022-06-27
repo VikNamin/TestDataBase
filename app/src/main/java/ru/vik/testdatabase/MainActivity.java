@@ -16,7 +16,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TODO Реализовать добавление, удаление. Сделать более красивый RecyclerView.
+    //TODO Реализовать проверку при создании. Добавить Toast при удалении.
+    // Распределить EditView по типам данных. Переделать поле available в checkBox.
+    // Сделать более красивый RecyclerView. Доработать интерфейс.
     protected static String collectionName = "books";
     public static ArrayList<Book> books = new ArrayList<Book>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
