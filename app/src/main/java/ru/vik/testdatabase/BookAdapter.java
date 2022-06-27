@@ -1,5 +1,6 @@
 package ru.vik.testdatabase;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +34,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(BookAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(BookAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Book book = books.get(position);
         holder.nameView.setText(book.getName());
         holder.authorView.setText(book.getAuthor());

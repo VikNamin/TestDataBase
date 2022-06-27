@@ -1,6 +1,7 @@
 package ru.vik.testdatabase;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static ru.vik.testdatabase.MainActivity.books;
+import static ru.vik.testdatabase.MainActivity.collectionName;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +9,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class FullBookActivity extends AppCompatActivity {
 
@@ -64,8 +73,6 @@ public class FullBookActivity extends AppCompatActivity {
 
     public void updateData(View view){
         if (!onSave){
-//            updateDB();
-
 
             publisherNameTextView.setVisibility(View.GONE);
             publisherEditText.setVisibility(View.VISIBLE);
@@ -94,8 +101,6 @@ public class FullBookActivity extends AppCompatActivity {
             amountNumTextView.setVisibility(View.GONE);
             amountNumEditText.setVisibility(View.VISIBLE);
             amountNumEditText.setText(amountNumTextView.getText());
-
-            System.out.println("Объект EditText1: " + amountNumEditText.getText());
 
             updateButton.setText("Save Data");
             onSave = true;
@@ -131,8 +136,6 @@ public class FullBookActivity extends AppCompatActivity {
             amountNumTextView.setVisibility(View.VISIBLE);
             amountNumTextView.setText(amountNumEditText.getText());
 
-            System.out.println("Объект EditText2: " + amountNumEditText.getText());
-
             updateButton.setText("Update Data");
             onSave = false;
         }
@@ -140,7 +143,7 @@ public class FullBookActivity extends AppCompatActivity {
 
     public void updateDB(){
         db
-                .collection(MainActivity.collectionName)
+                .collection(collectionName)
                 .document(uid)
                 .update(
                         "amountNum", Integer.valueOf(amountNumEditText.getText().toString()),
@@ -151,5 +154,18 @@ public class FullBookActivity extends AppCompatActivity {
                             "shopAddress", addressEditText.getText().toString(),
                             "yearPublishing", Integer.valueOf(yearEditText.getText().toString())
                 );
+        books = new ArrayList<Book>();
+        db.collection(collectionName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Book book = document.toObject(Book.class);
+                            book.setUid(document.getId());
+                            books.add(book);
+                        }
+                    }
+                });
     }
 }
