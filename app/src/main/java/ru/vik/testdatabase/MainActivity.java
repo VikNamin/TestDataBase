@@ -31,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.list);
         mSwipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
 
-//        Book book = new Book("Понедельник начинается в субботу", "АСТ", "Стругацкий Б.Н.", 1965, 3.99, "ТРЦ «Ярмарка», пл. Вокзальная, 13", true, 10);
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//        db.collection("books").document().set(book);
-
         bookClickListener = new BookAdapter.OnBookClickListener() {
             @Override
             public void onBookClick(Book book, int position) {
@@ -92,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void toAdmin(View view) {
-        Intent intent = new Intent(this, BookAddActivity.class);
+    public void createBook(View view) {
+        Intent intent = new Intent(MainActivity.this, CreateBookActivity.class);
         startActivity(intent);
     }
 

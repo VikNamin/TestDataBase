@@ -62,7 +62,7 @@ public class Book {
         this.uid = uid;
     }
 
-    public String getUid() {
+    protected String getUid() {
         return uid;
     }
 }

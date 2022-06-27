@@ -15,7 +15,7 @@
             android:name=".FullBookActivity"
             android:exported="false" />
         <activity
-            android:name=".BookAddActivity"
+            android:name=".CreateBookActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

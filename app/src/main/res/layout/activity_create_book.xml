@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FullBookActivity">
+    tools:context=".CreateBookActivity">
 
-    <TextView
-        android:id="@+id/fullNameTextView"
+    <EditText
+        android:id="@+id/fullNameCreateEditText"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginTop="16dp"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/fullNameCreateEditText"
         app:layout_constraintVertical_bias="0.006">
 
         <TableRow
@@ -37,30 +37,22 @@
             android:layout_height="135dp">
 
             <TextView
-                android:id="@+id/publisherNameTextView"
+                android:id="@+id/publisherCreateNameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Издатель" />
 
-            <TextView
-                android:id="@+id/publisherNameTextViewChosen"
-                android:layout_width="190dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
-                android:id="@+id/publisherEditText"
+                android:id="@+id/publisherCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
 
         </TableRow>
 
@@ -69,30 +61,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/authorTextView"
+                android:id="@+id/authorCreateTextView"
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Автор" />
 
-            <TextView
-                android:id="@+id/authorTextViewChosen"
-                android:layout_width="179dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
             <EditText
-                android:id="@+id/authorEditText"
+                android:id="@+id/authorCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
         </TableRow>
 
         <TableRow
@@ -100,30 +83,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/yearTextView"
+                android:id="@+id/yearCreateTextView"
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Год Издания" />
 
-            <TextView
-                android:id="@+id/yearTextViewChosen"
-                android:layout_width="164dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
             <EditText
-                android:id="@+id/yearEditText"
+                android:id="@+id/yearCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
 
         </TableRow>
 
@@ -132,30 +106,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/priceTextView"
+                android:id="@+id/priceCreateTextView"
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Цена" />
 
-            <TextView
-                android:id="@+id/priceTextViewChosen"
-                android:layout_width="171dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
             <EditText
-                android:id="@+id/priceEditText"
+                android:id="@+id/priceCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
 
         </TableRow>
 
@@ -164,30 +129,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/addressTextView"
+                android:id="@+id/addressCreateTextView"
                 android:layout_width="121dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Адрес Магазина" />
 
-            <TextView
-                android:id="@+id/addressTextViewChosen"
-                android:layout_width="159dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
             <EditText
-                android:id="@+id/addressEditText"
+                android:id="@+id/addressCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
 
         </TableRow>
 
@@ -196,30 +152,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/availableTextView"
+                android:id="@+id/availableCreateTextView"
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Наличие" />
 
-            <TextView
-                android:id="@+id/availableTextViewChosen"
-                android:layout_width="179dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
             <EditText
-                android:id="@+id/availableEditText"
+                android:id="@+id/availableCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
 
         </TableRow>
 
@@ -228,59 +175,37 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/amountNumTextView"
+                android:id="@+id/amountNumCreateTextView"
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
                 android:text="Количество" />
 
-            <TextView
-                android:id="@+id/amountNumTextViewChosen"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
             <EditText
-                android:id="@+id/amountNumEditText"
+                android:id="@+id/amountNumCreateEditText"
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
-                android:textSize="11sp"
-                android:visibility="gone" />
+                android:textSize="11sp" />
 
         </TableRow>
 
     </TableLayout>
 
     <Button
-        android:id="@+id/updateButton"
+        android:id="@+id/createNewBookButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="updateData"
-        android:text="Update Book"
+        android:onClick="createNewBook"
+        android:text="Create Book"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
         app:layout_constraintVertical_bias="0.17" />
-
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="deleteBook"
-        android:text="Delete Book"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateButton"
-        app:layout_constraintVertical_bias="0.261" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,23 +2,21 @@ package ru.vik.testdatabase;
 
 import static ru.vik.testdatabase.MainActivity.books;
 import static ru.vik.testdatabase.MainActivity.collectionName;
-
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 
 public class FullBookActivity extends AppCompatActivity {
@@ -30,6 +28,7 @@ public class FullBookActivity extends AppCompatActivity {
     boolean onSave = false;
     private String uid;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String TAG = "MyActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,6 +164,17 @@ public class FullBookActivity extends AppCompatActivity {
                             book.setUid(document.getId());
                             books.add(book);
                         }
+                    }
+                });
+    }
+
+    public void deleteBook(View view){
+        db.collection(collectionName).document(uid)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "Successfully deleted!");
                     }
                 });
     }
