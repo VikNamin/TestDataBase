@@ -197,18 +197,10 @@
 
             <TextView
                 android:id="@+id/availableTextView"
-                android:layout_width="104dp"
-                android:layout_height="32dp"
+                android:layout_width="117dp"
+                android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:text="Наличие" />
-
-            <TextView
-                android:id="@+id/availableTextViewChosen"
-                android:layout_width="179dp"
-                android:layout_height="match_parent"
-                android:gravity="center|end"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
                 android:id="@+id/availableEditText"
@@ -220,6 +212,13 @@
                 android:scrollbarSize="2dp"
                 android:textSize="11sp"
                 android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/availableCheckBox"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:clickable="false" />
 
         </TableRow>
 

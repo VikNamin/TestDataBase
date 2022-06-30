@@ -12,6 +12,7 @@ public class Book {
     private int amountNum;          //Количество
     private String uid = "";
 
+    //Пустой конструктор для создания документа в FireStore
     public Book() {
     }
 

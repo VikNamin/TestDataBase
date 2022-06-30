@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
@@ -27,8 +29,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
         this.inflater = LayoutInflater.from(context);
     }
 
+    @NonNull
     @Override
-    public BookAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BookAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.list_item, parent, false);
         return new ViewHolder(view);
     }
@@ -40,13 +43,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
         holder.authorView.setText(book.getAuthor());
         holder.priceView.setText(String.valueOf(book.getPrice()));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v)
-            {
-                // вызываем метод слушателя, передавая ему данные
-                onClickListener.onBookClick(book, position);
-            }
+        holder.itemView.setOnClickListener(v -> {
+            // вызываем метод слушателя, передавая ему данные
+            onClickListener.onBookClick(book, position);
         });
     }
 

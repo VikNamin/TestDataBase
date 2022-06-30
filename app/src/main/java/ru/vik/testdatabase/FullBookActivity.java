@@ -6,29 +6,26 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 public class FullBookActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabase;
     TextView nameTextView, publisherNameTextView, authorTextView, yearPublishingTextView, priceTextView, shopAddressTextView, availableTextView, amountNumTextView;
-    EditText publisherEditText, authorEditText, yearEditText, priceEditText, addressEditText, availableEditText, amountNumEditText;
+    EditText publisherEditText, authorEditText, yearEditText, priceEditText, addressEditText, amountNumEditText;
     Button updateButton;
+    CheckBox availableCheckBox;
     boolean onSave = false;
     private String uid;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String TAG = "MyActivity";
+    private ArrayList<EditText> checkerList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +42,7 @@ public class FullBookActivity extends AppCompatActivity {
         yearPublishingTextView = (TextView) findViewById(R.id.yearTextViewChosen);
         priceTextView = (TextView) findViewById(R.id.priceTextViewChosen);
         shopAddressTextView = (TextView) findViewById(R.id.addressTextViewChosen);
-        availableTextView = (TextView) findViewById(R.id.availableTextViewChosen);
+        availableTextView = (TextView) findViewById(R.id.availableTextView);
         amountNumTextView = (TextView) findViewById(R.id.amountNumTextViewChosen);
 
         publisherEditText = (EditText) findViewById(R.id.publisherEditText);
@@ -53,7 +50,7 @@ public class FullBookActivity extends AppCompatActivity {
         yearEditText = (EditText) findViewById(R.id.yearEditText);
         priceEditText = (EditText) findViewById(R.id.priceEditText);
         addressEditText = (EditText) findViewById(R.id.addressEditText);
-        availableEditText = (EditText) findViewById(R.id.availableEditText);
+        availableCheckBox = (CheckBox) findViewById(R.id.availableCheckBox);
         amountNumEditText = (EditText) findViewById(R.id.amountNumEditText);
 
         nameTextView.setText(getIntent().getExtras().getString("name"));
@@ -62,12 +59,14 @@ public class FullBookActivity extends AppCompatActivity {
         yearPublishingTextView.setText(String.valueOf(getIntent().getExtras().getInt("yearPublishing")));
         priceTextView.setText(Double.toString(getIntent().getExtras().getDouble("price")));
         shopAddressTextView.setText(getIntent().getExtras().getString("shopAddress"));
-        availableTextView.setText(Boolean.toString(getIntent().getExtras().getBoolean("available")));
+        availableCheckBox.setChecked(getIntent().getExtras().getInt("amountNum") > 0);
         amountNumTextView.setText(String.valueOf(getIntent().getExtras().getInt("amountNum")));
 
         uid = getIntent().getExtras().getString("uid");
 
-
+        checkerList.add(yearEditText);
+        checkerList.add(priceEditText);
+        checkerList.add(amountNumEditText);
     }
 
     public void updateData(View view){
@@ -93,10 +92,6 @@ public class FullBookActivity extends AppCompatActivity {
             addressEditText.setVisibility(View.VISIBLE);
             addressEditText.setText(shopAddressTextView.getText());
 
-            availableTextView.setVisibility(View.GONE);
-            availableEditText.setVisibility(View.VISIBLE);
-            availableEditText.setText(availableTextView.getText());
-
             amountNumTextView.setVisibility(View.GONE);
             amountNumEditText.setVisibility(View.VISIBLE);
             amountNumEditText.setText(amountNumTextView.getText());
@@ -105,6 +100,11 @@ public class FullBookActivity extends AppCompatActivity {
             onSave = true;
         }
         else {
+            if(!isNormal()){
+                return;
+            }
+            availableCheckBox.setChecked(Integer.parseInt(amountNumEditText.getText().toString()) > 0);
+
             updateDB();
 
             publisherEditText.setVisibility(View.GONE);
@@ -127,10 +127,6 @@ public class FullBookActivity extends AppCompatActivity {
             shopAddressTextView.setVisibility(View.VISIBLE);
             shopAddressTextView.setText(addressEditText.getText());
 
-            availableEditText.setVisibility(View.GONE);
-            availableTextView.setVisibility(View.VISIBLE);
-            availableTextView.setText(availableEditText.getText());
-
             amountNumEditText.setVisibility(View.GONE);
             amountNumTextView.setVisibility(View.VISIBLE);
             amountNumTextView.setText(amountNumEditText.getText());
@@ -147,23 +143,20 @@ public class FullBookActivity extends AppCompatActivity {
                 .update(
                         "amountNum", Integer.valueOf(amountNumEditText.getText().toString()),
                             "author", authorEditText.getText().toString(),
-                            "available", Boolean.parseBoolean(availableEditText.getText().toString()),
+                            "available", Boolean.parseBoolean(availableCheckBox.getText().toString()),
                             "price", Double.valueOf(priceEditText.getText().toString()),
                             "publisherName", publisherEditText.getText().toString(),
                             "shopAddress", addressEditText.getText().toString(),
                             "yearPublishing", Integer.valueOf(yearEditText.getText().toString())
                 );
-        books = new ArrayList<Book>();
+        books = new ArrayList<>();
         db.collection(collectionName)
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Book book = document.toObject(Book.class);
-                            book.setUid(document.getId());
-                            books.add(book);
-                        }
+                .addOnCompleteListener(task -> {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Book book = document.toObject(Book.class);
+                        book.setUid(document.getId());
+                        books.add(book);
                     }
                 });
     }
@@ -171,11 +164,16 @@ public class FullBookActivity extends AppCompatActivity {
     public void deleteBook(View view){
         db.collection(collectionName).document(uid)
                 .delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "Successfully deleted!");
-                    }
-                });
+                .addOnSuccessListener(aVoid -> Toast.makeText(this, "Книга " + nameTextView.getText() + " успешно удалена", Toast.LENGTH_SHORT).show());
+    }
+
+    private boolean isNormal(){
+        for (TextView view : checkerList) {
+            if (view.getText().toString().equals("")) {
+                Toast.makeText(this, "Поле " + view.getText() + " не может быть пустым!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return true;
     }
 }
