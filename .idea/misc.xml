@@ -6,10 +6,11 @@
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/drawable/divider_drawable.xml" value="0.2595" />
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/layout/activity_create_book.xml" value="0.25" />
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/layout/activity_full_book.xml" value="0.536" />
-        <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/layout/list_item.xml" value="0.25" />
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/layout/new_list_item.xml" value="0.4" />
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/menu/search_menu.xml" value="0.1" />
         <entry key="..\:/AlexWorking/Android/TestDataBase/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/M5A78L/Desktop/AlexTraining/Android/TestDataBase/app/src/main/res/layout/activity_book_add.xml" value="0.33" />
         <entry key="..\:/Users/M5A78L/Desktop/AlexTraining/Android/TestDataBase/app/src/main/res/layout/activity_create_book.xml" value="0.359375" />
@@ -25,5 +26,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22826086956521738" />
+      </ProjectState>
+    </option>
   </component>
 </project>

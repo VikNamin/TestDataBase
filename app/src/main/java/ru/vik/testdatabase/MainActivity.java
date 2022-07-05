@@ -2,10 +2,13 @@ package ru.vik.testdatabase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout mSwipeRefreshLayout;
     BookAdapter.OnBookClickListener bookClickListener;
     RecyclerView recyclerView;
+    BookAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.list);
         mSwipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+        adapter = new BookAdapter(this, books, bookClickListener);
 
         bookClickListener = (book, position) -> {
             Intent intent = new Intent(MainActivity.this, FullBookActivity.class);
@@ -55,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                         book.setUid(document.getId());
                         books.add(book);
                     }
-
-                    recyclerView.setAdapter(new BookAdapter(MainActivity.this, books, bookClickListener));
+                    adapter = new BookAdapter(MainActivity.this, books, bookClickListener);
+                    recyclerView.setAdapter(adapter);
                 });
 
         mSwipeRefreshLayout.setOnRefreshListener(() -> {
@@ -69,11 +74,49 @@ public class MainActivity extends AppCompatActivity {
                             book.setUid(document.getId());
                             books.add(book);
                         }
-                        recyclerView.setAdapter(new BookAdapter(MainActivity.this, books, bookClickListener));
+                        adapter = new BookAdapter(MainActivity.this, books, bookClickListener);
+                        recyclerView.setAdapter(adapter);
                         recyclerView.invalidate();
                     });
             mSwipeRefreshLayout.setRefreshing(false);
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+        MenuItem searchItem = menu.findItem(R.id.actionSearch);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return false;
+            }
+        });
+        return true;
+    }
+
+    private void filter(String text){
+        ArrayList<Book> filteredList = new ArrayList<>();
+
+        for (Book book : books) {
+            if (book.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(book);
+            }
+        }
+        if (filteredList.isEmpty()){
+            Toast.makeText(this, "Не найдено", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            adapter.filterList(filteredList);
+        }
     }
 
     public void createBook(View view) {
