@@ -4,4 +4,21 @@
     <string name="createButton">Create Book</string>
     <string name="nameTextView">Название</string>
     <string name="action_search"></string>
+    <string name="publisherOnCreateText">Издатель</string>
+    <string name="publisherOnCreateEditText">Издатель</string>
+    <string name="authorOnCreateText">Автор</string>
+    <string name="authorOnCreateEditText">Автор</string>
+    <string name="yearOnCreateText">Год Издания</string>
+    <string name="yearOnCreateEditText">Год Издания</string>
+    <string name="priceOnCreateText">Цена</string>
+    <string name="priceOnCreateEditText">Цена</string>
+    <string name="addressOnCreateText">Адрес Магазина</string>
+    <string name="addressOnCreateEditText">Адрес Магазина</string>
+    <string name="availableOnCreateText">Наличие</string>
+    <string name="amountOnCreateText">Количество</string>
+    <string name="amountOnCreateEditText">Количество</string>
+    <string name="buttonOnCreateText">Create Book</string>
+    <string name="updateButtonOnUpdate">Обновить данные</string>
+    <string name="deleteButtonOnUpdate">Удалить книгу</string>
+    <string name="saveButtonOnUpdate">Сохранить данные</string>
 </resources>

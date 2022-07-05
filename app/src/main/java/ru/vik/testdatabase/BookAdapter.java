@@ -44,7 +44,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
         holder.priceView.setText(String.valueOf(book.getPrice()));
 
         holder.itemView.setOnClickListener(v -> {
-            // вызываем метод слушателя, передавая ему данные
             onClickListener.onBookClick(book, position);
         });
     }

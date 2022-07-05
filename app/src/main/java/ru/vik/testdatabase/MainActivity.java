@@ -15,8 +15,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     //TODO
-    // Распределить EditText по типам данных
-    // Доработать интерфейс.
     // Распределить String величины по values/strings
     // Релизовать поиск
     protected static String collectionName = "books";
