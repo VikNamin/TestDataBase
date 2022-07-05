@@ -4,24 +4,26 @@ public class Book {
 
     private String name;            //Название
     private String publisherName;   //Издательский дом
-    private String author;          //Автор //TODO Подумать как лучше оформить поле автора
+    private String author;          //Автор             //TODO Подумать как лучше оформить поле автора
     private int yearPublishing;     //Год издания
-    private double price;            //Цена
-    private String shopAddress;     //Адрес магазина //TODO Подумать, через что лучше оформить: Текстом, геопозицей через geohash или через +Code
-    private boolean isAvailable;    //Наличие
-    private long amountNum;         //Количество
+    private double price;           //Цена
+    private String shopAddress;     //Адрес магазина    //TODO Подумать, через что лучше оформить: Текстом, геопозицей через geohash или через +Code
+    private boolean available;      //Наличие
+    private int amountNum;          //Количество
+    private String uid = "";
 
+    //Пустой конструктор для создания документа в FireStore
     public Book() {
     }
 
-    public Book(String name, String publisherName, String author, int yearPublishing, double price, String shopAddress, boolean isAvailable, long amountNum) {
+    public Book(String name, String publisherName, String author, int yearPublishing, double price, String shopAddress, boolean available, int amountNum) {
         this.name = name;
         this.publisherName = publisherName;
         this.author = author;
         this.yearPublishing = yearPublishing;
         this.price = price;
         this.shopAddress = shopAddress;
-        this.isAvailable = isAvailable;
+        this.available = available;
         this.amountNum = amountNum;
     }
 
@@ -50,10 +52,18 @@ public class Book {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
-    public long getAmountNum() {
+    public int getAmountNum() {
         return amountNum;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    protected String getUid() {
+        return uid;
     }
 }
