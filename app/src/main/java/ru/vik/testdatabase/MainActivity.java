@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -13,10 +15,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     //TODO
-    // Распределить EditText по типам данных.
-    // Сделать более красивый RecyclerView.
+    // Распределить EditText по типам данных
     // Доработать интерфейс.
     // Распределить String величины по values/strings
+    // Релизовать поиск
     protected static String collectionName = "books";
     public static ArrayList<Book> books = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();

@@ -256,12 +256,15 @@
 
     </TableLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="updateData"
         android:text="Update Book"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -269,12 +272,15 @@
         app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
         app:layout_constraintVertical_bias="0.17" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="deleteBook"
         android:text="Delete Book"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
