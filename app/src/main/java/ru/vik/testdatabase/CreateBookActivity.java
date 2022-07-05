@@ -24,14 +24,14 @@ public class CreateBookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_book);
-        fullNameCreateEditText = (EditText) findViewById(R.id.fullNameCreateEditText);
-        publisherCreateEditText = (EditText) findViewById(R.id.publisherCreateEditText);
-        authorCreateEditText = (EditText) findViewById(R.id.authorCreateEditText);
-        yearCreateEditText = (EditText) findViewById(R.id.yearCreateEditText);
-        priceCreateEditText = (EditText) findViewById(R.id.priceCreateEditText);
-        addressCreateEditText = (EditText) findViewById(R.id.addressCreateEditText);
-        availableCreateCheckBox = (CheckBox) findViewById(R.id.availableCreateCheckBox);
-        amountNumCreateEditText = (EditText) findViewById(R.id.amountNumCreateEditText);
+        fullNameCreateEditText =  findViewById(R.id.fullNameCreateEditText);
+        publisherCreateEditText =  findViewById(R.id.publisherCreateEditText);
+        authorCreateEditText =  findViewById(R.id.authorCreateEditText);
+        yearCreateEditText =  findViewById(R.id.yearCreateEditText);
+        priceCreateEditText =  findViewById(R.id.priceCreateEditText);
+        addressCreateEditText =  findViewById(R.id.addressCreateEditText);
+        availableCreateCheckBox =  findViewById(R.id.availableCreateCheckBox);
+        amountNumCreateEditText =  findViewById(R.id.amountNumCreateEditText);
 
         checkerList.add(yearCreateEditText);
         checkerList.add(priceCreateEditText);

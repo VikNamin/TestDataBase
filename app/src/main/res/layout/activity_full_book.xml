@@ -41,14 +41,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Издатель" />
+                android:text="@string/publisherOnCreateText" />
 
             <TextView
                 android:id="@+id/publisherNameTextViewChosen"
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:gravity="center|end"
-                android:text="TextView"
+                android:text="@string/publisherOnCreateText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
@@ -73,14 +73,14 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Автор" />
+                android:text="@string/authorOnCreateText" />
 
             <TextView
                 android:id="@+id/authorTextViewChosen"
                 android:layout_width="179dp"
                 android:layout_height="match_parent"
                 android:gravity="center|end"
-                android:text="TextView"
+                android:text="@string/authorOnCreateText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
@@ -104,14 +104,14 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Год Издания" />
+                android:text="@string/yearOnCreateText" />
 
             <TextView
                 android:id="@+id/yearTextViewChosen"
                 android:layout_width="164dp"
                 android:layout_height="match_parent"
                 android:gravity="center|end"
-                android:text="TextView"
+                android:text="@string/yearOnCreateText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
@@ -136,14 +136,14 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Цена" />
+                android:text="@string/priceOnCreateText" />
 
             <TextView
                 android:id="@+id/priceTextViewChosen"
                 android:layout_width="171dp"
                 android:layout_height="match_parent"
                 android:gravity="center|end"
-                android:text="TextView"
+                android:text="@string/priceOnCreateText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
@@ -168,14 +168,14 @@
                 android:layout_width="121dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Адрес Магазина" />
+                android:text="@string/addressOnCreateText" />
 
             <TextView
                 android:id="@+id/addressTextViewChosen"
                 android:layout_width="159dp"
                 android:layout_height="match_parent"
                 android:gravity="center|end"
-                android:text="TextView"
+                android:text="@string/addressOnCreateText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
@@ -200,7 +200,7 @@
                 android:layout_width="117dp"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
-                android:text="Наличие" />
+                android:text="@string/availableOnCreateText" />
 
             <EditText
                 android:id="@+id/availableEditText"
@@ -231,14 +231,14 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Количество" />
+                android:text="@string/amountOnCreateText" />
 
             <TextView
                 android:id="@+id/amountNumTextViewChosen"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center|end"
-                android:text="TextView"
+                android:text="@string/amountOnCreateText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <EditText
@@ -261,7 +261,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="updateData"
-        android:text="Update Book"
+        android:text="@string/updateButtonOnUpdate"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -277,7 +277,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="deleteBook"
-        android:text="Delete Book"
+        android:text="@string/deleteButtonOnUpdate"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"

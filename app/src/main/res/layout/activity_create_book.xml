@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Издатель" />
+                android:text="@string/publisherOnCreateText" />
 
 
             <EditText
@@ -50,7 +50,7 @@
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
-                android:hint="Издатель"
+                android:hint="@string/publisherOnCreateEditText"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
@@ -66,7 +66,7 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Автор" />
+                android:text="@string/authorOnCreateText" />
 
             <EditText
                 android:id="@+id/authorCreateEditText"
@@ -74,7 +74,7 @@
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
-                android:hint="Автор"
+                android:hint="@string/authorOnCreateEditText"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
@@ -90,7 +90,7 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Год Издания" />
+                android:text="@string/yearOnCreateText" />
 
             <EditText
                 android:id="@+id/yearCreateEditText"
@@ -98,7 +98,7 @@
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
-                android:hint="Год Издания"
+                android:hint="@string/yearOnCreateEditText"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
@@ -114,7 +114,7 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Цена" />
+                android:text="@string/priceOnCreateText" />
 
             <EditText
                 android:id="@+id/priceCreateEditText"
@@ -122,7 +122,7 @@
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
-                android:hint="Цена"
+                android:hint="@string/priceOnCreateEditText"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
@@ -138,7 +138,7 @@
                 android:layout_width="121dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Адрес Магазина" />
+                android:text="@string/addressOnCreateText" />
 
             <EditText
                 android:id="@+id/addressCreateEditText"
@@ -146,7 +146,7 @@
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
-                android:hint="Адрес Магазина"
+                android:hint="@string/addressOnCreateEditText"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
@@ -162,7 +162,7 @@
                 android:layout_width="104dp"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
-                android:text="Наличие" />
+                android:text="@string/availableOnCreateText" />
 
             <CheckBox
                 android:id="@+id/availableCreateCheckBox"
@@ -182,7 +182,7 @@
                 android:layout_width="104dp"
                 android:layout_height="32dp"
                 android:gravity="center|left"
-                android:text="Количество" />
+                android:text="@string/amountOnCreateText" />
 
             <EditText
                 android:id="@+id/amountNumCreateEditText"
@@ -190,7 +190,7 @@
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="center|end"
-                android:hint="Количество"
+                android:hint="@string/amountOnCreateEditText"
                 android:inputType="textPersonName"
                 android:scrollbarSize="2dp"
                 android:textSize="11sp" />
@@ -204,7 +204,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="createNewBook"
-        android:text="Create Book"
+        android:text="@string/buttonOnCreateText"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"

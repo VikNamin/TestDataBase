@@ -3,7 +3,6 @@ package ru.vik.testdatabase;
 import static ru.vik.testdatabase.MainActivity.books;
 import static ru.vik.testdatabase.MainActivity.collectionName;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,29 +28,28 @@ public class FullBookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        mDatabase = FirebaseDatabase.getInstance().getReference(MainActivity.collectionName);
-        
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_book);
 
-        updateButton  = (Button) findViewById(R.id.updateButton);
+        updateButton  =  findViewById(R.id.updateButton);
 
-        nameTextView = (TextView) findViewById(R.id.fullNameTextView);
-        publisherNameTextView = (TextView) findViewById(R.id.publisherNameTextViewChosen);
-        authorTextView = (TextView) findViewById(R.id.authorTextViewChosen);
-        yearPublishingTextView = (TextView) findViewById(R.id.yearTextViewChosen);
-        priceTextView = (TextView) findViewById(R.id.priceTextViewChosen);
-        shopAddressTextView = (TextView) findViewById(R.id.addressTextViewChosen);
-        availableTextView = (TextView) findViewById(R.id.availableTextView);
-        amountNumTextView = (TextView) findViewById(R.id.amountNumTextViewChosen);
+        nameTextView =  findViewById(R.id.fullNameTextView);
+        publisherNameTextView =  findViewById(R.id.publisherNameTextViewChosen);
+        authorTextView =  findViewById(R.id.authorTextViewChosen);
+        yearPublishingTextView =  findViewById(R.id.yearTextViewChosen);
+        priceTextView =  findViewById(R.id.priceTextViewChosen);
+        shopAddressTextView = findViewById(R.id.addressTextViewChosen);
+        availableTextView =  findViewById(R.id.availableTextView);
+        amountNumTextView =  findViewById(R.id.amountNumTextViewChosen);
 
-        publisherEditText = (EditText) findViewById(R.id.publisherEditText);
-        authorEditText = (EditText) findViewById(R.id.authorEditText);
-        yearEditText = (EditText) findViewById(R.id.yearEditText);
-        priceEditText = (EditText) findViewById(R.id.priceEditText);
-        addressEditText = (EditText) findViewById(R.id.addressEditText);
-        availableCheckBox = (CheckBox) findViewById(R.id.availableCheckBox);
-        amountNumEditText = (EditText) findViewById(R.id.amountNumEditText);
+        publisherEditText =  findViewById(R.id.publisherEditText);
+        authorEditText =  findViewById(R.id.authorEditText);
+        yearEditText =  findViewById(R.id.yearEditText);
+        priceEditText =  findViewById(R.id.priceEditText);
+        addressEditText =  findViewById(R.id.addressEditText);
+        availableCheckBox =  findViewById(R.id.availableCheckBox);
+        amountNumEditText =  findViewById(R.id.amountNumEditText);
 
         nameTextView.setText(getIntent().getExtras().getString("name"));
         publisherNameTextView.setText(getIntent().getExtras().getString("publisherName"));
@@ -96,7 +94,7 @@ public class FullBookActivity extends AppCompatActivity {
             amountNumEditText.setVisibility(View.VISIBLE);
             amountNumEditText.setText(amountNumTextView.getText());
 
-            updateButton.setText("Save Data");
+            updateButton.setText(R.string.saveButtonOnUpdate);
             onSave = true;
         }
         else {
@@ -131,7 +129,7 @@ public class FullBookActivity extends AppCompatActivity {
             amountNumTextView.setVisibility(View.VISIBLE);
             amountNumTextView.setText(amountNumEditText.getText());
 
-            updateButton.setText("Update Data");
+            updateButton.setText(R.string.updateButtonOnUpdate);
             onSave = false;
         }
     }
