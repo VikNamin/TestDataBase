@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
+
+import java.util.ArrayList;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
 
@@ -18,15 +19,22 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
     }
 
     private final LayoutInflater inflater;
-    private final List<Book> books;
+    private  ArrayList<Book> books;
     private final OnBookClickListener onClickListener;
 
-
-
-    BookAdapter(Context context, List<Book> books, OnBookClickListener onClickListener) {
+    BookAdapter(Context context, ArrayList<Book> books, OnBookClickListener onClickListener) {
         this.onClickListener = onClickListener;
         this.books = books;
         this.inflater = LayoutInflater.from(context);
+    }
+
+    public void filterList(ArrayList<Book> filteredList) {
+        // below line is to add our filtered
+        // list in our course array list.
+        books = filteredList;
+        // below line is to notify our adapter
+        // as change in recycler view data.
+        notifyDataSetChanged();
     }
 
     @NonNull
